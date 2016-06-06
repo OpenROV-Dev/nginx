@@ -9,7 +9,7 @@ g++ \
 cmake \
 build-essential \
 pkg-config \
-wget \ 
+wget \
 libpcre3 \
 libpcre3-dev \
 libssl-dev
