@@ -39,5 +39,5 @@ cd nginx-${nginxVersion}
     --with-http_gzip_static_module \
     --with-http_v2_module
 
-mkdir nginx_install
-make install DESTDIR=./nginx_install/usr/local
+mkdir ../nginx_install
+make install DESTDIR=../nginx_install/usr/local
