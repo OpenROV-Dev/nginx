@@ -14,9 +14,9 @@ libpcre3 \
 libpcre3-dev \
 libssl-dev
 
-wget http://nginx.org/download/nginx-$(nginxVersion).tar.gz
-tar xf nginx-$(nginxVersion).tar.gz
-cd nginx-$(nginxVersion)
+wget http://nginx.org/download/nginx-${nginxVersion}.tar.gz
+tar xf nginx-${nginxVersion}.tar.gz
+cd nginx-${nginxVersion}
 ./configure \
     --prefix=/usr/share/nginx \
     --sbin-path=/usr/sbin/nginx \
