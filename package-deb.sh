@@ -2,7 +2,7 @@
 set -ex
 #Install Pre-req
 apt-get update
-apt-get install -y rubygems ruby1.8-dev build-essential
+apt-get install -y rubygems ruby-dev build-essential
 gem install fpm
 export DIR=${PWD#}
 export PACKAGE="nginx"
