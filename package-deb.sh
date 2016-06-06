@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ex
 #Install Pre-req
+apt-get update
 apt-get install -y rubygems build-essential
 gem install fpm
 export DIR=${PWD#}
