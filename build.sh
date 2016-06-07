@@ -40,4 +40,4 @@ cd nginx-${nginxVersion}
     --with-http_v2_module
 
 mkdir -p ../nginx_install
-make install DESTDIR=../nginx_install/usr/local
+make install DESTDIR=../nginx_install
