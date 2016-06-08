@@ -22,6 +22,7 @@ echo "deb-src http://httpredir.debian.org/debian jessie-backports main" >> /etc/
 apt-get update -o Dir::Etc::sourcelist="sources.list.d/backports.list" \
     -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
 
+DIR=${PWD};
 wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
 tar xzvf openssl-1.0.2f.tar.gz
 
@@ -45,7 +46,7 @@ apt-get -t jessie-backports build-dep -y nginx
 # /opt/rebuildnginx/nginx-$PACKAGE_VERSION/debian/rules
 pushd nginx-*/debian
 sed -ri '/^common_configure_flags := \\$/ a\			--with-http_v2_module \\' rules 
-sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl=/root/openssl-1.0.2f \\' rules 
+sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl=${DIR}/openssl-1.0.2f \\' rules 
 sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl-opt="-fPIC" \\' rules 
 
 popd
