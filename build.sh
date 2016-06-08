@@ -45,7 +45,7 @@ apt-get -t jessie-backports build-dep -y nginx
 # /opt/rebuildnginx/nginx-$PACKAGE_VERSION/debian/rules
 pushd nginx-*/debian
 sed -ri '/^common_configure_flags := \\$/ a\			--with-http_v2_module \\' rules 
-sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl=/root/build/openssl-1.0.2f \\' rules 
+sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl=/root/openssl-1.0.2f \\' rules 
 sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl-opt="-fPIC" \\' rules 
 
 popd
