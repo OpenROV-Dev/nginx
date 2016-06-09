@@ -14,6 +14,8 @@ libpcre3 \
 libpcre3-dev \
 dpkg-dev
 
+mkdir /opt/buildlocal
+cd /opt/buildlocal
 #since we are extending an exisitng source, we don't have to add keys or anything
 echo "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
 echo "deb-src http://httpredir.debian.org/debian jessie-backports main" >> /etc/apt/sources.list.d/backports.list
@@ -43,7 +45,7 @@ apt-get -t jessie-backports build-dep -y nginx
 # /opt/rebuildnginx/nginx-$PACKAGE_VERSION/debian/rules
 pushd nginx-*/debian
 sed -ri '/^common_configure_flags := \\$/ a\			--with-http_v2_module \\' rules 
-sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl=/build/openssl-1.0.2f \\' rules 
+sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl=/opt/buildlocal/openssl-1.0.2f \\' rules 
 sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl-opt="-fPIC" \\' rules 
 
 popd
