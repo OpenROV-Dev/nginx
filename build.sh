@@ -26,9 +26,6 @@ DIR=${PWD}
 wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
 tar xzvf openssl-1.0.2f.tar.gz
 
-mkdir /opt/rebuildnginx
-cd /opt/rebuildnginx
-
 # Get Nginx (ppa:nginx/stable) source files
 apt-get -t jessie-backports source nginx
 
@@ -54,7 +51,7 @@ popd
 cd nginx-*
 dpkg-buildpackage -b
 cd ..    
-mv nginx-common_* ..
+mv nginx-common_* /build/
 #mkdir -p ../nginx_install
 #make install DESTDIR=../nginx_install/usr/local
 
