@@ -52,7 +52,8 @@ sed -ri '/^common_configure_flags := \\$/ a\			--with-openssl-opt="-fPIC" \\' ru
 popd
 
 cd nginx-*
-dpkg-buildpackage -b    
+dpkg-buildpackage -b
+cd ..    
 mv nginx-common_* ..
 #mkdir -p ../nginx_install
 #make install DESTDIR=../nginx_install/usr/local
