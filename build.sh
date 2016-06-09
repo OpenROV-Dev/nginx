@@ -22,7 +22,7 @@ echo "deb-src http://httpredir.debian.org/debian jessie-backports main" >> /etc/
 apt-get update -o Dir::Etc::sourcelist="sources.list.d/backports.list" \
     -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
 
-DIR=${PWD};
+DIR=${PWD}
 wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
 tar xzvf openssl-1.0.2f.tar.gz
 
