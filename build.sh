@@ -53,8 +53,7 @@ popd
 cd nginx-*
 dpkg-buildpackage -b
 cd ..    
-mv nginx-common_* /build/
-mv nginx_* /build/
+mv *.deb /build/
 
 #mkdir -p ../nginx_install
 #make install DESTDIR=../nginx_install/usr/local
